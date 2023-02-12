@@ -1,0 +1,19 @@
+{
+  "name": "hello",
+  "version": "1.0.0",
+  "description": "Hello world: NodeJs",
+  "main": "hello.js",
+  "scripts": {
+    "build": "npm install typescript && tsc hello.ts && npm remove typescript"
+  },
+  "dependencies": {
+    "@octokit/auth-app": "^4.0.9",
+    "@octokit/rest": "^19.0.7"
+  },
+  "devDependencies": {
+    "@types/jest": "^27.5.1",
+    "@types/node": "^18.0.0",
+    "jest": "^27.5.1",
+    "nock": "^13.0.5"
+  }
+}
