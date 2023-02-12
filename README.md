@@ -1,23 +1,24 @@
-# Sample Function: Node.js "Hello World"
+# Digital Ocean Function in Typescript
 
 ## Introduction
 
-This repository contains a sample function written in Node.js JavaScript. You can deploy it on DigitalOcean's App Platform as a Serverless Function component.
+This repository contains a function written in Typescript. You can deploy it on DigitalOcean's App Platform as a Serverless Function component.
 
-**Note: This feature is currently in a [limited beta release](https://docs.digitalocean.com/products/platform/product-lifecycle/#beta). Following these steps may result in charges for the use of DigitalOcean services.**
 
 ### Requirements
 
 * You need a DigitalOcean account. If you don't already have one, you can sign up at [https://cloud.digitalocean.com/registrations/new](https://cloud.digitalocean.com/registrations/new).
-* You need to have access to the beta release of App Platform Serverless Functions. You can sign up for notifications about beta and early access releases [using this form](https://www.digitalocean.com/nimbella).
 
 ## Deploying the Function
 
-During the beta, documentation for Serverless Functions will be available to beta participants only in the [Serverless Functions Closed Beta Google Doc](https://docs.google.com/document/d/1qhxnl4ndb0Jh2WkNnNLa2lAUo6u7EAfLyBlUsaPZA0Y). Please refer to this document for instructions on how to deploy Serverless Functions in App Platform.
+Clone the repo. Make sure `doctl` is setup in your system.You can get it installed from [here](https://docs.digitalocean.com/reference/doctl/how-to/install/). Once doct is setup, run the commant `doctl serverless deploy gh-app-serverless`
 
 ## Using the Function
-Accessing the function with the `?name=` query parameter will greet the specified name. For example, `?name=Alice` will return  `Hello Alice`. Using no query parameters will return `Hello stranger`.
+Go to DigitalOceanFunction, under function settings, 
+1. Increase the timeout - 20000ms
+2. Increase the memory - 512MB
+3. Set environment variables. App will look for these required variables-PRIVATE_KEY,OWNER,APP_ID,INSTALLATION_ID. Optional variable-COMMENT
 
-### Learn More
+## Registering the Github App
 
-You can learn more about App Platform and how to manage and update your application in [the official App Platform Documentation](https://www.digitalocean.com/docs/app-platform/).
+Checkout [these](https://docs.github.com/en/developers/apps/building-github-apps/creating-a-github-app) and follow. You will find APP_ID, INSTALLTION_ID and be able to generate a PRIVATE_KEY once the app is created.
